@@ -1,0 +1,115 @@
+	<ion-view view-title=" " hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-home" class=" page-home">
+		<div class="assertive-900-bg topslide slide-box-hero singleimg1" ng-controller="front_page_africaCtrl">
+			<ion-slides class="slide-box-hero-content" options="{slidesPerView:1}" slider="data.slider">
+				<ion-slide-page class="slide-box-hero-item" ng-repeat="item in data_front_page_africs | limitTo : 5:0" >
+
+				<div class="slide-box-hero-container" style="">
+                   <a class="modimg" ng-href="#/liberia_news_network/front_page_afric_singles/{{item.id}}"> <img alt="" class="full-image" src="{{item.x_featured_media}}" /></a>
+					<div class="padding caption">
+
+						<a ng-href="#/liberia_news_network/front_page_afric_singles/{{item.id}}"><h2 ng-bind-html="item.title.rendered | strHTML"></h2></a>
+					</div>
+				</div>
+				</ion-slide-page>
+			</ion-slides>
+  </div>
+<!-- ./code Featured 1 Front Page Africa-->
+<!--code Featured 2 Observer-->
+<div class="fea1b">
+<div ng-controller="liberian_observerCtrl">
+			<!-- code listing -->
+       <div class="catimg"> <img src="data/images/images/observer.png" width="" height="" /></div>
+<div class="row">
+
+			<a class="item item-thumbnail item-text-wrap" ng-repeat="item in observers | limitTo : 4:0" ng-href="#/liberia_news_network/observer_singles/{{item.id}}" >
+
+				<img image-lazy-src="{{item.x_featured_media}}" />
+			<h3 ng-bind-html="item.title.rendered | to_trusted"></h3>
+						<span class="icon ion-android-calendar"> {{item.date| date:'EEE, MMM d'}}</span>
+				</a>
+              </div>
+      </div>
+  </div>
+ <!-- ./code Featured 2 Observer-->
+
+
+<!-- code Featured 3 code listing GNN -->
+
+<div ng-controller="gnn_liberiaCtrl">
+<div class="catimg"> <img src="data/images/images/gnnheader.png" width="" height="" /></div>
+			<!-- code listing -->
+			<div class="list animate-none">
+				<a class="item item-thumbnail-right item-text-wrap" ng-repeat="item in gnn_liberias | limitTo : 4:0" ng-init="$last ? fireEvent() : null" href="#/liberia_news_network/gnn_liberia_singles/{{item.id}}">
+					<img alt="" class="full-image" src="{{ item._embedded['wp:featuredmedia'][0]['source_url'] }}" />
+					<h3 class=""  ng-bind-html="item.title.rendered | to_trusted"></h3>
+						<p>
+						<span class="icon ion-android-calendar"> {{item.date | date:'EEE, MMM d' }}</span>
+						</p>
+				</a>
+			</div>
+		</div>
+<!-- ./code Featured 3 code listing GNN -->
+
+
+<!-- code Featured 4 code listing Bush Chicken -->
+
+<div ng-controller="the_bush_chickenCtrl">
+<div class="catimg"> <img src="data/images/images/bushchickenheader.png" width="" height="" /></div>
+			<!-- code listing -->
+			<div class="list animate-none">
+				<a class="item item-thumbnail-right item-text-wrap" ng-repeat="item in the_bush_chickens | limitTo : 4:0" ng-init="$last ? fireEvent() : null" href="#/liberia_news_network/the_bush_chicken_singles/{{item.id}}">
+					<img alt="" class="full-image" src="{{ item._embedded['wp:featuredmedia'][0]['source_url'] }}" />
+					<h3 class=""  ng-bind-html="item.title.rendered | to_trusted"></h3>
+						<p>
+						<span class="icon ion-android-calendar"> {{item.date | date:'EEE, MMM d' }}</span>
+						</p>
+				</a>
+			</div>
+		</div>
+<!-- ./code Featured 4 code listing Bush Chicken -->
+
+
+
+
+<!--code Featured 5 Kmtv-->
+
+<div class="fea1b kmtv">
+<div ng-controller="kmtvCtrl">
+			<!-- code listing -->
+       <div class="catimg"> <img src="data/images/images/kmtv.png" width="" height="" /></div>
+<div class="row">
+
+			<a class="item item-thumbnail item-text-wrap" ng-repeat="item in kmtvs | limitTo : 4:0" ng-href="#/liberia_news_network/kmtv_singles/{{item.id}}" >
+
+				<img image-lazy-src="{{item._embedded['wp:featuredmedia'][0]['source_url'] }}" />
+			<h3 ng-bind-html="item.title.rendered | to_trusted"></h3>
+						<span class="icon ion-android-calendar"> {{item.date| date:'EEE, MMM d'}}</span>
+				</a>
+              </div>
+      </div>
+  </div>
+ <!-- ./code Featured 5 KMTV-->
+
+<!-- code Featured 6 code listing The News News -->
+
+<div ng-controller="the_news_libCtrl">
+ <div class="catimg"> <img src="data/images/images/thenews.png" width="" height="" /></div>
+ <!-- code listing -->
+ <div class="list animate-none">
+	 <a class="item item-thumbnail-right item-text-wrap" ng-repeat="item in the_news_libs | limitTo : 4:0" ng-init="$last ? fireEvent() : null" href="#/liberia_news_network/the_news_lib_singles/{{item.id}}">
+		 <img alt="" class="full-image" ng-src="{{item.x_featured_media}}" />
+
+		 <h3 class=""  ng-bind-html="item.title.rendered | to_trusted"></h3>
+			 <p>
+			 <span class="icon ion-android-calendar"> {{item.date | date:'EEE, MMM d' }}</span>
+			 </p>
+	 </a>
+ </div>
+</div>
+<!-- ./code Featured 6 code listing The News news -->
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

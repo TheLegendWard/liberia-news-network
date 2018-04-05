@@ -1,0 +1,28 @@
+	<ion-view view-title="Dashboard" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-dashboard" class=" page-dashboard">
+		
+		<div class="dashboard-panel">
+			<!-- row -->
+			<div class="row">
+				<a class="col-33 no-border light positive-bg ink"  ng-href="#/liberia_news_network/dashboard" >
+					<i class="icon ion-ios-home" ></i>
+					<p>{{ "Home" | translate }}</p>
+				</a>
+				<a class="col-33 no-border light positive-900-bg ink"  ng-href="#/liberia_news_network/news_category" >
+					<i class="icon ion-grid" ></i>
+					<p>{{ "News Sources" | translate }}</p>
+				</a>
+				<a class="col-33 no-border light calm-bg ink"  ng-href="#/liberia_news_network/news_posts_bookmark" >
+					<i class="icon ion-bookmark" ></i>
+					<p>{{ "Bookmarks" | translate }}</p>
+				</a>
+			</div>
+			<!-- ./row -->
+			
+
+		</div>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

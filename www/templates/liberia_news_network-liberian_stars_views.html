@@ -1,0 +1,59 @@
+	<ion-view view-title="Liberian Stars Views" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-liberian_stars_views" class=" page-liberian_stars_views">
+					<!-- code refresh -->
+			<ion-refresher pulling-text="{{ 'Pull to refresh...' | translate }}"  on-refresh="doRefresh()"></ion-refresher>
+			<!-- ./code refresh -->
+			<div class="catimg"> <img src="data/images/images/lsv.png" width="" height="" /></div>
+
+
+			
+			<!-- code listing -->
+<div class="list animate-none">
+<div class="list card postlist" ng-repeat="item in liberia_stars_vis | filter:filter_news_postss as results" ng-init="$last ? fireEvent() : null" >
+<div class="item item-body">
+		<a class="item" ng-href="#/liberia_news_network/liberia_stars_vi_singles/{{item.id}}">
+			<img alt="" class="full-image" src="{{ item._embedded['wp:featuredmedia'][0]['source_url'] }}" />
+		</a>
+</div>
+
+	<a class="item" ng-href="#/liberia_news_network/liberia_stars_vi_singles/{{item.id}}">
+			
+		<h2 ng-bind-html="item.title.rendered | to_trusted"></h2></a>
+					 <div class="row dateshare">
+<div class="col col-80">
+<span class="subdued" >{{item.date | date:'EEE, MMM d' }}</span>
+</div>
+<div class="col col-10">
+	<a ng-click="addToDbVirtual(item);"><i class="icon ion-ios-bookmarks-outline"></i></a>
+	</div>
+	<div class="col col-10">
+		<a ng-controller="ShareCtrl" ng-click="shareAnywhere(null, null, null, item.link)"><i class="icon ion-share"></i></a>
+		</div>
+</div>
+
+
+</div>
+</div>
+<!-- ./code listing -->
+			<!-- code infinite scroll -->
+			<ion-list class="list">
+				<ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="onInfinite()" distance="5px" ng-if="hasMoreData"></ion-infinite-scroll>
+			</ion-list>
+			<!-- ./code infinite scroll -->
+
+
+			<!-- code search result not found -->
+			<ion-list class="list">
+				<div class="item" ng-if="results.length == 0" >
+					<p>{{ 'No results found...!' | translate }}</p>
+				</div>
+			</ion-list>
+			<!-- code search result not found -->
+
+
+
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

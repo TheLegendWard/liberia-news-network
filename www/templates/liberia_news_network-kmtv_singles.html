@@ -1,0 +1,43 @@
+	<ion-view view-title="{{ kmtv.title.rendered }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll scroll="true"   id="page-kmtv_singles" class="page-kmtv_singles">
+		<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+<div class="list ">
+				
+				<!-- images -->
+
+		<div class="itemn"><img class="full-image" src="{{ kmtv._embedded['wp:featuredmedia'][0]['source_url'] }}" /></div>
+		<!-- ./images -->
+  <!-- text -->
+        <div class="itemcatsingle"><span class="subdued" ><span class="icon ion-android-globe"> KMTV Liberia</span></span></div>
+        <!-- ./text -->
+						
+		<!-- heading-1 -->
+		<div class="item item-divider"  ng-bind-html="kmtv.title.rendered | to_trusted">{{kmtv.title.rendered}}</div>
+		<!-- ./heading-1 -->
+		 
+				 <div class="row dateshare">
+<div class="col col-80">
+<span class="subdued" >{{kmtv.x_date | date:'EEE, MMM d' }}</span>
+</div>
+<div class="col col-10">
+<a ng-click="addToDbVirtual(kmtv);"><i class="icon ion-ios-bookmarks-outline"></i></a>
+</div>
+<div class="col col-10">
+<a ng-controller="ShareCtrl" ng-click="shareAnywhere(null, null, null, kmtv.link)"><i class="icon ion-share"></i></a>
+</div>
+</div>
+				
+
+		<!-- to_trusted -->
+		<div class="item item-text-wrap noborder to_trusted {{ fontsize }}" ng-bind-html="kmtv.content.rendered | strHTML"></div>
+		<!-- ./to_trusted -->
+
+</div>
+
+
+
+<br/><br/><br/>
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

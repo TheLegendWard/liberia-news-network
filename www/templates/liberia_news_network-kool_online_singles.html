@@ -1,0 +1,40 @@
+	<ion-view view-title="{{ kool_online.title.rendered }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll scroll="true"   id="page-kool_online_singles" class="page-kool_online_singles">
+		<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+              
+              <!-- images -->
+
+          <div class="itemn"><img class="full-image" src="{{ kool_online._embedded['wp:featuredmedia'][0]['source_url'] }}" /></div>
+					<!-- ./images -->
+                
+					<!-- heading-1 -->
+					<div class="item item-divider"  ng-bind-html="kool_online.title.rendered | to_trusted">{{kool_online.title.rendered}}</div>
+					<!-- ./heading-1 -->
+           
+               <div class="row dateshare">
+  <div class="col col-80">
+<span class="subdued" >{{kool_online.x_date | date:'EEE, MMM d' }}</span>
+	</div>
+  <div class="col col-10">
+    <a ng-click="addToDbVirtual(kool_online);"><i class="icon ion-ios-bookmarks-outline"></i></a>
+    </div>
+    <div class="col col-10">
+	    <a ng-controller="ShareCtrl" ng-click="shareAnywhere(null, null, null, kool_online.link)"><i class="icon ion-share"></i></a>
+	    </div>
+	</div>
+              
+	
+					<!-- to_trusted -->
+					<div class="item item-text-wrap noborder to_trusted {{ fontsize }}" ng-bind-html="kool_online.content.rendered | strHTML"></div>
+					<!-- ./to_trusted -->
+
+			</div>
+	
+    
+
+			<br/><br/><br/>
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>
